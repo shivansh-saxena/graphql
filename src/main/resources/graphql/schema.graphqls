@@ -10,3 +10,7 @@ type Query{
     getAllProducts: [Product]
     getProductsByCategory(category: String): [Product]
 }
+
+type Mutation{
+    updateProductStock(id: ID, quantity: Int): Product
+}
