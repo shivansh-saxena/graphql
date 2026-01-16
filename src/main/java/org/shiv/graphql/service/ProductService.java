@@ -17,7 +17,15 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public  List<Product> getProductsByCategory(String category) {
+    public List<Product> getProductsByCategory(String category) {
         return productRepository.findByCategory(category);
     }
+
+    public Product updateProductStock(int id, int quantity) {
+        Product existingProduct =
+                productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
+        existingProduct.setStock(quantity);
+        return productRepository.save(existingProduct);
+    }
+
 }

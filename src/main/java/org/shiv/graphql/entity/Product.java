@@ -61,4 +61,8 @@ public class Product {
                 ", stock=" + stock +
                 '}';
     }
+
+    public void setStock(int quantity) {
+        this.stock = quantity;
+    }
 }
